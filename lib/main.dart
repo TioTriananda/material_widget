@@ -1,50 +1,100 @@
 import 'package:flutter/material.dart';
+import 'package:coba_statefull/halaman_awal.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-          appBar: AppBar(
-            title: Text('Tugas Material Widget'),
-            backgroundColor: Color.fromARGB(255, 150, 211, 70),
-          ),
-          body: Column(children: <Widget>[
-            Image.network('photo_2022-09-15_14-44-30'),
-            Text(
-              'Selamat Datang di Restoran Kami',
-              style: TextStyle(fontSize: 24, fontFamily: "Serif", height: 2.0),
-            ),
-            Text(
-              'Selamat Menikmati',
-              style: TextStyle(fontSize: 14, fontFamily: "Serif", height: 2.0),
-            ),
-            Text(
-              'Silahkan Pilih Pesanan nya',
-              style: TextStyle(fontSize: 14, fontFamily: "Serif", height: 2.0),
-            ),
-            Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  RaisedButton(
-                    color: Colors.greenAccent,
-                    child: Text("Ayam Penyet"),
-                    onPressed: () {},
-                  ),
-                  RaisedButton(
-                    color: Colors.greenAccent,
-                    child: Text("Lele Penyet"),
-                    onPressed: () {},
-                  ),
-                  RaisedButton(
-                    color: Colors.greenAccent,
-                    child: Text("Nila"),
-                    onPressed: () {},
-                  )
-                ]),
-          ])),
+      home: MenuPage(),
     );
   }
 }
+
+
+//! This for Lifecyecle Widget
+
+// class ChangeSize extends StatefulWidget {
+
+//   ChangeSize(){
+//     print("Constructor");
+//   }
+
+//   @override
+//   State<ChangeSize> createState() => _ChangeSizeState();
+// }
+
+// class _ChangeSizeState extends State<ChangeSize> {
+
+//   var textSize = 10.0;
+
+//   //kita tidak menggunakan context
+//   @override
+//   void initState() {
+//     // TODO: implement initState
+//     super.initState();
+//     print("initState");
+//   }
+
+//   //disini kita bisa menggunakan sebuah context
+//  @override
+//   void didChangeDependencies() {
+//     // TODO: implement didChangeDependencies
+//     print("didChangeDependencies");
+//     super.didChangeDependencies();
+//   }
+
+//   @override
+//   void didUpdateWidget(covariant ChangeSize oldWidget) {
+//     // TODO: implement didUpdateWidget
+//     super.didUpdateWidget(oldWidget);
+//     print("didUpdateWidget");
+//   }
+
+//   @override
+//   void deactivate() {
+//     // TODO: implement deactivate
+//     print("deactivate");
+//     super.deactivate();
+//   }
+
+//   @override
+//   void dispose() {
+//     // TODO: implement dispose
+//     print("dispose");
+//     super.dispose();
+//   }
+
+
+
+//   @override
+//   Widget build(BuildContext context) {
+//     print("builde()");
+//     return Scaffold(
+//       appBar: AppBar(
+//         title:const Text(
+//           "Change Size",
+//         ),
+//       ),
+//       body: Center(
+//         child: Text(
+//           "hello",
+//           style: TextStyle(fontSize: textSize),
+//         ),
+//       ),
+//       floatingActionButton: FloatingActionButton(
+//         onPressed: (){
+//           setState(() {
+//           textSize = textSize + 1.0;
+//           });
+//         },
+//         child:const Icon(Icons.add),
+//       ),
+//     );
+//   }
+// }
